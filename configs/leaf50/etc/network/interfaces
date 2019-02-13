@@ -1,0 +1,753 @@
+############################################
+## Loopback and Management eth0
+#
+#  Options:
+#   clagd-vxlan-anycast-ip - The anycast VTEP address for this MLAG pair, unique per pair/rack.
+#
+############################################
+
+auto lo
+iface lo inet loopback
+    address 172.16.25.50/32
+    clagd-vxlan-anycast-ip 172.16.24.50
+
+auto eth0
+iface eth0
+  address 172.16.82.150/22
+    mtu 1500
+
+auto swp1
+iface swp1
+    alias engpuc001-enp94s0
+    mtu 9216
+
+auto swp2
+iface swp2
+    alias engpuc002-enp94s0
+    mtu 9216
+
+auto swp3
+iface swp3
+    alias engpuc003-enp94s0
+    mtu 9216
+
+auto swp4
+iface swp4
+    alias engpuc004-enp94s0
+    mtu 9216
+
+auto swp5
+iface swp5
+    alias engpuc005-enp94s0
+    mtu 9216
+
+auto swp6
+iface swp6
+    alias engpuc006-enp94s0
+    mtu 9216
+
+auto swp7
+iface swp7
+    alias engpuc007-enp94s0
+    mtu 9216
+
+auto swp8
+iface swp8
+    alias engpuc008-enp94s0
+    mtu 9216
+
+auto swp9
+iface swp9
+    alias engpuc009-enp94s0
+    mtu 9216
+
+auto swp10
+iface swp10
+    alias enrama001-enp59s0f0
+    mtu 9216
+
+auto swp11
+iface swp11
+    alias enrama002-enp59s0f0
+    mtu 9216
+
+auto swp12
+iface swp12
+    alias enrama003-enp59s0f0
+    mtu 9216
+
+auto swp13
+iface swp13
+    alias enrama004-enp59s0f0
+    mtu 9216
+
+auto swp14
+iface swp14
+    alias enrama005-enp59s0f0
+    mtu 9216
+
+auto swp15
+iface swp15
+    alias enrama006-enp59s0f0
+    mtu 9216
+
+auto swp16
+iface swp16
+    alias enrama007-enp59s0f0
+    mtu 9216
+
+auto swp17
+iface swp17
+    alias enrama008-enp59s0f0
+    mtu 9216
+
+auto swp18
+iface swp18
+    alias enrama009-enp59s0f0
+    mtu 9216
+
+auto swp19
+iface swp19
+    mtu 9216
+
+auto swp20
+iface swp20
+    mtu 9216
+
+auto swp21
+iface swp21
+    mtu 9216
+
+auto swp22
+iface swp22
+    mtu 9216
+
+auto swp23
+iface swp23
+    mtu 9216
+
+auto swp24
+iface swp24
+    mtu 9216
+
+auto swp25
+iface swp25
+    alias engpuc063-enp216s0
+    mtu 9216
+
+auto swp26
+iface swp26
+    alias engpuc064-enp216s0
+    mtu 9216
+
+auto swp27
+iface swp27
+    alias engpuc065-enp216s0
+    mtu 9216
+
+auto swp28
+iface swp28
+    alias engpuc066-enp216s0
+    mtu 9216
+
+auto swp29
+iface swp29
+    alias engpuc067-enp216s0
+    mtu 9216
+
+auto swp30
+iface swp30
+    alias engpuc068-enp216s0
+    mtu 9216
+
+auto swp31
+iface swp31
+    alias engpuc069-enp216s0
+    mtu 9216
+
+auto swp32
+iface swp32
+    alias engpuc070-enp216s0
+    mtu 9216
+
+auto swp33
+iface swp33
+    alias engpuc071-enp216s0
+    mtu 9216
+
+auto swp34
+iface swp34
+    alias enrama063-eno1
+    mtu 9216
+
+auto swp35
+iface swp35
+    alias enrama064-eno1
+    mtu 9216
+
+auto swp36
+iface swp36
+    alias enrama065-eno1
+    mtu 9216
+
+auto swp37
+iface swp37
+    alias enrama066-eno1
+    mtu 9216
+
+auto swp38
+iface swp38
+    alias enrama067-eno1
+    mtu 9216
+
+auto swp39
+iface swp39
+    alias enrama068-eno1
+    mtu 9216
+
+auto swp40
+iface swp40
+    alias enrama069-eno1
+    mtu 9216
+
+auto swp41
+iface swp41
+    alias enrama070-eno1
+    mtu 9216
+
+auto swp42
+iface swp42
+    alias enrama071-eno1
+    mtu 9216
+
+auto swp43
+iface swp43
+    mtu 9216
+
+auto swp44
+iface swp44
+    mtu 9216
+
+auto swp45
+iface swp45
+    mtu 9216
+
+auto swp46
+iface swp46
+    mtu 9216
+
+auto swp47
+iface swp47
+    mtu 9216
+
+auto swp48
+iface swp48
+    mtu 9216
+
+auto swp49
+iface swp49
+    mtu 9216
+
+auto swp50
+iface swp50
+    mtu 9216
+
+auto swp51
+iface swp51
+    mtu 9216
+
+auto swp52
+iface swp52
+    mtu 9216
+
+auto swp53
+iface swp53
+    mtu 9216
+
+auto swp54
+iface swp54
+    mtu 9216
+
+auto swp55
+iface swp55
+    mtu 9216
+
+auto swp56
+iface swp56
+    mtu 9216
+
+auto bond_1
+iface bond_1
+    bond-lacp-bypass-allow yes
+    bond-slaves swp1
+    bridge-access 1022
+    clag-id 1
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_2
+iface bond_2
+    bond-lacp-bypass-allow yes
+    bond-slaves swp2
+    bridge-access 1022
+    clag-id 2
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_3
+iface bond_3
+    bond-lacp-bypass-allow yes
+    bond-slaves swp3
+    bridge-access 1022
+    clag-id 3
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_4
+iface bond_4
+    bond-lacp-bypass-allow yes
+    bond-slaves swp4
+    bridge-access 1022
+    clag-id 4
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_5
+iface bond_5
+    bond-lacp-bypass-allow yes
+    bond-slaves swp5
+    bridge-access 1022
+    clag-id 5
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_6
+iface bond_6
+    bond-lacp-bypass-allow yes
+    bond-slaves swp6
+    bridge-access 1022
+    clag-id 6
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_7
+iface bond_7
+    bond-lacp-bypass-allow yes
+    bond-slaves swp7
+    bridge-access 1022
+    clag-id 7
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_8
+iface bond_8
+    bond-lacp-bypass-allow yes
+    bond-slaves swp8
+    bridge-access 1022
+    clag-id 8
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_9
+iface bond_9
+    bond-lacp-bypass-allow yes
+    bond-slaves swp9
+    bridge-access 1022
+    clag-id 9
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_10
+iface bond_10
+    bond-lacp-bypass-allow yes
+    bond-slaves swp10
+    bridge-access 1022
+    clag-id 10
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_11
+iface bond_11
+    bond-lacp-bypass-allow yes
+    bond-slaves swp11
+    bridge-access 1022
+    clag-id 11
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_12
+iface bond_12
+    bond-lacp-bypass-allow yes
+    bond-slaves swp12
+    bridge-access 1022
+    clag-id 12
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_13
+iface bond_13
+    bond-lacp-bypass-allow yes
+    bond-slaves swp13
+    bridge-access 1022
+    clag-id 13
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_14
+iface bond_14
+    bond-lacp-bypass-allow yes
+    bond-slaves swp14
+    bridge-access 1022
+    clag-id 14
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_15
+iface bond_15
+    bond-lacp-bypass-allow yes
+    bond-slaves swp15
+    bridge-access 1022
+    clag-id 15
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_16
+iface bond_16
+    bond-lacp-bypass-allow yes
+    bond-slaves swp16
+    bridge-access 1022
+    clag-id 16
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_17
+iface bond_17
+    bond-lacp-bypass-allow yes
+    bond-slaves swp17
+    bridge-access 1022
+    clag-id 17
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_18
+iface bond_18
+    bond-lacp-bypass-allow yes
+    bond-slaves swp18
+    bridge-access 1022
+    clag-id 18
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_25
+iface bond_25
+    bond-lacp-bypass-allow yes
+    bond-slaves swp25
+    bridge-access 1022
+    clag-id 19
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_26
+iface bond_26
+    bond-lacp-bypass-allow yes
+    bond-slaves swp26
+    bridge-access 1022
+    clag-id 20
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_27
+iface bond_27
+    bond-lacp-bypass-allow yes
+    bond-slaves swp27
+    bridge-access 1022
+    clag-id 21
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_28
+iface bond_28
+    bond-lacp-bypass-allow yes
+    bond-slaves swp28
+    bridge-access 1022
+    clag-id 22
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_29
+iface bond_29
+    bond-lacp-bypass-allow yes
+    bond-slaves swp29
+    bridge-access 1022
+    clag-id 23
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_30
+iface bond_30
+    bond-lacp-bypass-allow yes
+    bond-slaves swp30
+    bridge-access 1022
+    clag-id 24
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_31
+iface bond_31
+    bond-lacp-bypass-allow yes
+    bond-slaves swp31
+    bridge-access 1022
+    clag-id 25
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_32
+iface bond_32
+    bond-lacp-bypass-allow yes
+    bond-slaves swp32
+    bridge-access 1022
+    clag-id 26
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_33
+iface bond_33
+    bond-lacp-bypass-allow yes
+    bond-slaves swp33
+    bridge-access 1022
+    clag-id 27
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_34
+iface bond_34
+    bond-lacp-bypass-allow yes
+    bond-slaves swp34
+    bridge-access 1022
+    clag-id 28
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_35
+iface bond_35
+    bond-lacp-bypass-allow yes
+    bond-slaves swp35
+    bridge-access 1022
+    clag-id 29
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_36
+iface bond_36
+    bond-lacp-bypass-allow yes
+    bond-slaves swp36
+    bridge-access 1022
+    clag-id 30
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_37
+iface bond_37
+    bond-lacp-bypass-allow yes
+    bond-slaves swp37
+    bridge-access 1022
+    clag-id 31
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_38
+iface bond_38
+    bond-lacp-bypass-allow yes
+    bond-slaves swp38
+    bridge-access 1022
+    clag-id 32
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_39
+iface bond_39
+    bond-lacp-bypass-allow yes
+    bond-slaves swp39
+    bridge-access 1022
+    clag-id 33
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_40
+iface bond_40
+    bond-lacp-bypass-allow yes
+    bond-slaves swp40
+    bridge-access 1022
+    clag-id 34
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_41
+iface bond_41
+    bond-lacp-bypass-allow yes
+    bond-slaves swp41
+    bridge-access 1022
+    clag-id 35
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bond_42
+iface bond_42
+    bond-lacp-bypass-allow yes
+    bond-slaves swp42
+    bridge-access 1022
+    clag-id 36
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    mtu 9216
+
+auto bridge
+iface bridge
+    bridge-ports bond_1 bond_2 bond_3 bond_4 bond_5 bond_6 bond_7 bond_8 bond_9 bond_10 bond_11 bond_12 bond_13 bond_14 bond_15 bond_16 bond_17 bond_18 bond_25 bond_26 bond_27 bond_28 bond_29 bond_30 bond_31 bond_32 bond_33 bond_34 bond_35 bond_36 bond_37 bond_38 bond_39 bond_40 bond_41 bond_42 peerlink vni1022 vxlan4022
+    bridge-vids 1022 
+    bridge-vlan-aware yes
+
+auto mgmt
+iface mgmt
+    address 127.0.0.1/8
+    vrf-table auto
+
+############################################
+## Server connections and bonds
+#
+#  Options:
+#   bridge-vids - Override the default bride-vids list under the bridge
+############################################
+
+############################################
+## MLAG Configuration
+#
+#
+#  Options:
+#   peerlink.4094 - MLAG control subinterface for MAC,VLAN,anycast VTEP,MDB sync.  Also
+#                   used for iBGP peering for backup uplink.
+#   clagd-priority - Specify the role for this switch, implication for secondary role:
+#                    suspend all links in peerlink failure.
+#   clagd-sys-mac - Sysmac is unique per MLAG pair, also used to form the system ID for LACP bonds.
+#   clagd-backup-ip - Used as a keepalive for dead peer in a peerlink failure
+############################################
+
+#Bond interface for MLAG data path traffic redundancy
+############################################
+## VLAN Configuration
+#
+# Options:
+#  bridge-vids - Global bridge specifies the default vlan list (bridge-vids) for trunk interfaces.
+#                The for loop adds each VLAN in the VLAN list
+#                When changed to tenant format don't need the vids list
+#  bridge-ports - Specify which ports on the switch are L2 bridge access or trunk.
+#  address-virtual - Create a VRR virtual IP for a VLAN, typically the shared gateway between an MLAG pair.
+#  hwaddress - Set the MAC address for L2 VNI to be the same as the MLAG sys-mac
+#
+############################################
+
+############################################
+## L3 VLAN interface per tenant (for L3 VNI)
+############################################
+
+############################################
+## VXLAN Configuration
+############################################
+
+############################################
+## Uplink interfaces - BGP Unnumbered
+############################################
+
+############################################
+## VRFs
+############################################
+
+auto peerlink
+iface peerlink
+    bond-slaves swp47 swp48
+    mtu 9216
+
+auto peerlink.4094
+iface peerlink.4094
+    address 169.254.1.1/30
+    clagd-backup-ip 172.16.82.160
+    clagd-peer-ip 169.254.1.2
+    clagd-priority 1000
+    clagd-sys-mac 00:00:5E:00:00:50
+
+auto vlan1022
+iface vlan1022
+    address 172.16.23.150/23
+    address-virtual 44:38:39:FF:11:00 172.16.23.254/23
+    vlan-id 1022
+    vlan-raw-device bridge
+    vrf vrf_prod
+
+auto vlan4022
+iface vlan4022
+    hwaddress 00:00:5E:00:00:50
+    vlan-id 4022
+    vlan-raw-device bridge
+    vrf vrf_prod
+
+auto vni1022
+iface vni1022
+    bridge-access 1022
+    bridge-arp-nd-suppress on
+    bridge-learning off
+    mstpctl-bpduguard yes
+    mstpctl-portbpdufilter yes
+    mtu 9216
+    vxlan-id 1001022
+    vxlan-local-tunnelip 172.16.25.50
+
+auto vrf_prod
+iface vrf_prod
+    address 172.16.25.50/32
+    vrf-table auto
+
+auto vxlan4022
+iface vxlan4022
+    bridge-access 4022
+    bridge-arp-nd-suppress on
+    bridge-learning off
+    mstpctl-bpduguard yes
+    mstpctl-portbpdufilter yes
+    mtu 9216
+    vxlan-id 14022
+    vxlan-local-tunnelip 172.16.25.50
