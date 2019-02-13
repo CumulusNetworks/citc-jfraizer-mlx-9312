@@ -1,0 +1,25 @@
+- name: install netq
+  apt_repository:
+    repo: deb https://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 netq-1.3
+    filename: netq
+    state: present
+- apt:
+    name: cumulus-netq
+    update_cache: yes
+    state: latest
+- service:
+    name: rsyslog
+    state: restarted
+- service:
+    name: netqd
+    enabled: yes
+    state: restarted
+- copy:
+    src: files/netq.yml
+    dest: "/etc/netq/netq.yml"
+    owner: root
+    group: root
+    mode: "u=rw,o=r,g=r"
+- pause:
+    seconds: 5
+- shell: netq config restart agent
