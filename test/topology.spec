@@ -256,8 +256,8 @@ connect leaf54 swp48 leaf64 swp48
 connect leaf55 swp47 leaf65 swp47
 connect leaf55 swp48 leaf65 swp48
 
-connect leaf66 swp47 leaf66 swp47
-connect leaf66 swp48 leaf66 swp48
+connect leaf56 swp47 leaf66 swp47
+connect leaf56 swp48 leaf66 swp48
 
 
 # Servers - 1 in each rack, connected to swp25 of its leafs.
