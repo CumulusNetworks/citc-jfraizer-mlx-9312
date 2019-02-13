@@ -1,0 +1,183 @@
+frr version 4.0+cl3u8
+frr defaults datacenter
+hostname entorsw64
+username cumulus nopassword
+!
+service integrated-vtysh-config
+!
+log syslog
+!
+vrf vrf_prod
+ vni 14022
+ exit-vrf
+!
+interface swp1
+ description engpuc099-enp94s0
+!
+interface swp2
+ description engpuc100-enp94s0
+!
+interface swp3
+ description engpuc101-enp94s0
+!
+interface swp4
+ description engpuc102-enp94s0
+!
+interface swp5
+ description engpuc103-enp94s0
+!
+interface swp6
+ description engpuc104-enp94s0
+!
+interface swp7
+ description engpuc105-enp94s0
+!
+interface swp8
+ description engpuc106-enp94s0
+!
+interface swp9
+ description engpuc125-enp94s0
+!
+interface swp10
+ description enrama099-enp59s0f0
+!
+interface swp11
+ description enrama100-enp59s0f0
+!
+interface swp12
+ description enrama101-enp59s0f0
+!
+interface swp13
+ description enrama102-enp59s0f0
+!
+interface swp14
+ description enrama103-enp59s0f0
+!
+interface swp15
+ description enrama104-enp59s0f0
+!
+interface swp16
+ description enrama105-enp59s0f0
+!
+interface swp17
+ description enrama106-enp59s0f0
+!
+interface swp25
+ description engpuc037-enp216s0
+!
+interface swp26
+ description engpuc038-enp216s0
+!
+interface swp27
+ description engpuc039-enp216s0
+!
+interface swp28
+ description engpuc040-enp216s0
+!
+interface swp29
+ description engpuc041-enp216s0
+!
+interface swp30
+ description engpuc042-enp216s0
+!
+interface swp31
+ description engpuc043-enp216s0
+!
+interface swp32
+ description engpuc044-enp216s0
+!
+interface swp33
+ description enrama037-enp216s0
+!
+interface swp34
+ description enrama038-eno1
+!
+interface swp35
+ description enrama039-eno1
+!
+interface swp36
+ description enrama040-eno1
+!
+interface swp37
+ description enrama041-eno1
+!
+interface swp38
+ description enrama042-eno1
+!
+interface swp39
+ description enrama043-eno1
+!
+interface swp40
+ description enrama044-eno1
+!
+interface swp41
+ description enrama125-eno1
+!
+interface swp49
+ ipv6 nd ra-interval 10
+ no ipv6 nd suppress-ra
+!
+interface swp50
+ ipv6 nd ra-interval 10
+ no ipv6 nd suppress-ra
+!
+interface swp51
+ ipv6 nd ra-interval 10
+ no ipv6 nd suppress-ra
+!
+interface swp52
+ ipv6 nd ra-interval 10
+ no ipv6 nd suppress-ra
+!
+interface swp53
+ ipv6 nd ra-interval 10
+ no ipv6 nd suppress-ra
+!
+interface swp54
+ ipv6 nd ra-interval 10
+ no ipv6 nd suppress-ra
+!
+interface swp55
+ ipv6 nd ra-interval 10
+ no ipv6 nd suppress-ra
+!
+interface swp56
+ ipv6 nd ra-interval 10
+ no ipv6 nd suppress-ra
+!
+router bgp 4200000014
+ bgp router-id 172.16.25.64
+ bgp bestpath as-path multipath-relax
+ neighbor FABRIC peer-group
+ neighbor FABRIC remote-as external
+ neighbor FABRIC capability extended-nexthop
+ neighbor swp49 interface peer-group FABRIC
+ neighbor swp50 interface peer-group FABRIC
+ neighbor swp51 interface peer-group FABRIC
+ neighbor swp52 interface peer-group FABRIC
+ neighbor swp53 interface peer-group FABRIC
+ neighbor swp54 interface peer-group FABRIC
+ neighbor swp55 interface peer-group FABRIC
+ neighbor swp56 interface peer-group FABRIC
+ !
+ address-family ipv4 unicast
+  network 172.16.24.54/32
+  network 172.16.25.64/32
+ exit-address-family
+ !
+ address-family ipv6 unicast
+  neighbor FABRIC activate
+ exit-address-family
+ !
+ address-family l2vpn evpn
+  neighbor FABRIC activate
+  advertise-all-vni
+ exit-address-family
+!
+ip route 0.0.0.0/0 172.16.83.254
+!
+route-map LOOPBACK permit 100
+ match interface lo
+!
+line vty
+!

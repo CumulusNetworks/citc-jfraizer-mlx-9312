@@ -1,0 +1,218 @@
+############################################
+## Loopback and Management eth0
+############################################
+
+auto lo
+iface lo inet loopback
+    address 172.16.25.7/32
+
+auto eth0
+iface eth0
+    address 172.16.82.107/22
+    mtu 1500
+
+auto swp1
+iface swp1
+    mtu 9216
+
+auto swp2
+iface swp2
+    mtu 9216
+
+auto swp3
+iface swp3
+    mtu 9216
+
+auto swp4
+iface swp4
+    mtu 9216
+
+auto swp5
+iface swp5
+    mtu 9216
+
+auto swp6
+iface swp6
+    mtu 9216
+
+auto swp7
+iface swp7
+    mtu 9216
+
+auto swp8
+iface swp8
+    mtu 9216
+
+auto swp9
+iface swp9
+    mtu 9216
+
+auto swp10
+iface swp10
+    mtu 9216
+
+auto swp11
+iface swp11
+    mtu 9216
+
+auto swp12
+iface swp12
+    mtu 9216
+
+auto swp13
+iface swp13
+    mtu 9216
+
+auto swp14
+iface swp14
+    mtu 9216
+
+auto swp15
+iface swp15
+    mtu 9216
+
+auto swp16
+iface swp16
+    mtu 9216
+
+auto swp17
+iface swp17
+    mtu 9216
+
+auto swp18
+iface swp18
+    mtu 9216
+
+auto swp19
+iface swp19
+    mtu 9216
+
+auto swp20
+iface swp20
+    mtu 9216
+
+auto swp21
+iface swp21
+    mtu 9216
+
+auto swp22
+iface swp22
+    mtu 9216
+
+auto swp23
+iface swp23
+    mtu 9216
+
+auto swp24
+iface swp24
+    mtu 9216
+
+auto swp25
+iface swp25
+    mtu 9216
+
+auto swp26
+iface swp26
+    mtu 9216
+
+auto swp27
+iface swp27
+    mtu 9216
+
+auto swp28
+iface swp28
+    mtu 9216
+
+auto swp29
+iface swp29
+    mtu 9216
+
+auto swp30
+iface swp30
+    mtu 9216
+
+auto swp31
+iface swp31
+    mtu 9216
+
+auto swp32
+iface swp32
+    ############################################
+    ## VLAN Configuration
+    #
+    # Options:
+    #  bridge-vids - Global bridge specifies the default vlan list (bridge-vids) for trunk interfaces.
+    #  bridge-ports - Specify which ports on the switch are L2 bridge access or trunk.
+    #  address-virtual - Create a VRR virtual IP for a VLAN, typically the shared gateway between an MLAG pair.
+    #  hwaddress - Set the MAC address for L2 VNI to be the same as the MLAG sys-mac
+    ## L3 VLAN interface per tenant (for L3 VNI)
+    ## VXLAN Configuration
+    ## uplinks interfaces - BGP Unnumbered (Towards the leaves)
+    ## VRFs
+    mtu 9216
+
+############################################
+## VLAN Configuration
+#
+# Options:
+#  bridge-vids - Global bridge specifies the default vlan list (bridge-vids) for trunk interfaces.
+#  bridge-ports - Specify which ports on the switch are L2 bridge access or trunk.
+#  address-virtual - Create a VRR virtual IP for a VLAN, typically the shared gateway between an MLAG pair.
+#  hwaddress - Set the MAC address for L2 VNI to be the same as the MLAG sys-mac
+#
+############################################
+
+############################################
+## L3 VLAN interface per tenant (for L3 VNI)
+############################################
+
+############################################
+## VXLAN Configuration
+############################################
+
+############################################
+## uplinks interfaces - BGP Unnumbered (Towards the leaves)
+############################################
+
+############################################
+## VRFs
+############################################
+
+auto bond-to-juniper
+iface bond-to-juniper
+    address 172.16.0.13/30
+    bond-slaves swp29 swp30 swp31 swp32
+    vrf vrf_prod
+
+auto bridge
+iface bridge
+    bridge-ports vxlan4022
+    bridge-vids 4022
+    bridge-vlan-aware yes
+
+auto mgmt
+iface mgmt
+    address 127.0.0.1/8
+    vrf-table auto
+
+auto vlan4022
+iface vlan4022
+    vlan-id 4022
+    vlan-raw-device bridge
+    vrf vrf_prod
+
+auto vrf_prod
+iface vrf_prod
+    vrf-table auto
+
+auto vxlan4022
+iface vxlan4022
+    hwaddress AA:BB:CC:DD:EE:03
+    bridge-access 4022
+    bridge-arp-nd-suppress on
+    bridge-learning off
+    mstpctl-bpduguard yes
+    mstpctl-portbpdufilter yes
+    mtu 9216
+    vxlan-id 14022
+    vxlan-local-tunnelip 172.16.25.7
