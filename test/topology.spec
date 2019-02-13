@@ -262,25 +262,25 @@ connect leaf56 swp48 leaf66 swp48
 
 # Servers - 1 in each rack, connected to swp25 of its leafs.
 connect server01 eth1 leaf50 swp25
-connect server01 eth1 leaf60 swp25
+connect server01 eth2 leaf60 swp25
 
 connect server02 eth1 leaf51 swp25
-connect server02 eth1 leaf61 swp25
+connect server02 eth2 leaf61 swp25
 
 connect server03 eth1 leaf52 swp25
-connect server03 eth1 leaf62 swp25
+connect server03 eth2 leaf62 swp25
 
 connect server04 eth1 leaf53 swp25
-connect server04 eth1 leaf63 swp25
+connect server04 eth2 leaf63 swp25
 
 connect server05 eth1 leaf54 swp25
-connect server05 eth1 leaf64 swp25
+connect server05 eth2 leaf64 swp25
 
 connect server06 eth1 leaf55 swp25
-connect server06 eth1 leaf65 swp25
+connect server06 eth2 leaf65 swp25
 
 connect server07 eth1 leaf56 swp25
-connect server07 eth1 leaf66 swp25
+connect server07 eth2 leaf66 swp25
 
 # Outside connect to Juniper
 connect outside01 eth1 juniper01 swp17
