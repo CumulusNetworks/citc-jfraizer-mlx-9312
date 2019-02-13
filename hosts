@@ -15,18 +15,18 @@ spine08
 [leafs]
 leaf50
 leaf51
-leaf52
-leaf53
-leaf54
-leaf55
-leaf56
+#leaf52
+#leaf53
+#leaf54
+#leaf55
+#leaf56
 leaf60
 leaf61
-leaf62
-leaf63
-leaf64
-leaf65
-leaf66
+#leaf62
+#leaf63
+#leaf64
+#leaf65
+#leaf66
 
 [switches:children]
 spines
@@ -41,11 +41,11 @@ juniper
 [servers]
 server01
 server02
-server03
-server04
-server05
-server06
-server07
+#server03
+#server04
+#server05
+#server06
+#server07
 outside01
 
 #-------------------------------------------------------------------------------
