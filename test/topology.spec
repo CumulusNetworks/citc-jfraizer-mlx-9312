@@ -76,7 +76,7 @@ network leaf66 eth0 172.16.82.166 255.255.252.0
 network server01 eth0 172.16.83.1 255.255.252.0
 network server02 eth0 172.16.83.2 255.255.252.0
 network server03 eth0 172.16.83.3 255.255.252.0
-network server04 eth0 172.16.83.4 255.255.2520.0
+network server04 eth0 172.16.83.4 255.255.252.0
 network server05 eth0 172.16.83.5 255.255.252.0
 network server06 eth0 172.16.83.6 255.255.252.0
 network server07 eth0 172.16.83.7 255.255.252.0
