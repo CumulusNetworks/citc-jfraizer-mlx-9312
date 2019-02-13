@@ -48,40 +48,40 @@ service oob-mgmt-server mesos eth0 5050 TCP public
 service oob-mgmt-server marathon eth0 8080 TCP public
 service oob-mgmt-server mesosapp eth0 8088 TCP public
 
-network oob-mgmt-server eth1 172.16.83.254 255.255.252.0
+network oob-mgmt-server eth1 172.16.83.254 255.255.0.0
 
-network juniper01 eth0 172.16.82.1 255.255.252.0
+network juniper01 eth0 172.16.82.1 255.255.0.0
 
-network spine05 eth0 172.16.82.105 255.255.252.0
-network spine06 eth0 172.16.82.106 255.255.252.0
-network spine07 eth0 172.16.82.107 255.255.252.0
-network spine08 eth0 172.16.82.108 255.255.252.0
+network spine05 eth0 172.16.82.105 255.255.0.0
+network spine06 eth0 172.16.82.106 255.255.0.0
+network spine07 eth0 172.16.82.107 255.255.0.0
+network spine08 eth0 172.16.82.108 255.255.0.0
 
-network leaf50 eth0 172.16.82.150 255.255.252.0
-network leaf51 eth0 172.16.82.151 255.255.252.0
-network leaf52 eth0 172.16.82.152 255.255.252.0
-network leaf53 eth0 172.16.82.153 255.255.252.0
-network leaf54 eth0 172.16.82.154 255.255.252.0
-network leaf55 eth0 172.16.82.155 255.255.252.0
-network leaf56 eth0 172.16.82.156 255.255.252.0
+network leaf50 eth0 172.16.82.150 255.255.0.0
+network leaf51 eth0 172.16.82.151 255.255.0.0
+network leaf52 eth0 172.16.82.152 255.255.0.0
+network leaf53 eth0 172.16.82.153 255.255.0.0
+network leaf54 eth0 172.16.82.154 255.255.0.0
+network leaf55 eth0 172.16.82.155 255.255.0.0
+network leaf56 eth0 172.16.82.156 255.255.0.0
 
-network leaf60 eth0 172.16.82.160 255.255.252.0
-network leaf61 eth0 172.16.82.161 255.255.252.0
-network leaf62 eth0 172.16.82.162 255.255.252.0
-network leaf63 eth0 172.16.82.163 255.255.252.0
-network leaf64 eth0 172.16.82.164 255.255.252.0
-network leaf65 eth0 172.16.82.165 255.255.252.0
-network leaf66 eth0 172.16.82.166 255.255.252.0
+network leaf60 eth0 172.16.82.160 255.255.0.0
+network leaf61 eth0 172.16.82.161 255.255.0.0
+network leaf62 eth0 172.16.82.162 255.255.0.0
+network leaf63 eth0 172.16.82.163 255.255.0.0
+network leaf64 eth0 172.16.82.164 255.255.0.0
+network leaf65 eth0 172.16.82.165 255.255.0.0
+network leaf66 eth0 172.16.82.166 255.255.0.0
 
-network server01 eth0 172.16.83.1 255.255.252.0
-network server02 eth0 172.16.83.2 255.255.252.0
-network server03 eth0 172.16.83.3 255.255.252.0
-network server04 eth0 172.16.83.4 255.255.252.0
-network server05 eth0 172.16.83.5 255.255.252.0
-network server06 eth0 172.16.83.6 255.255.252.0
-network server07 eth0 172.16.83.7 255.255.252.0
+network server01 eth0 172.16.83.1 255.255.0.0
+network server02 eth0 172.16.83.2 255.255.0.0
+network server03 eth0 172.16.83.3 255.255.0.0
+network server04 eth0 172.16.83.4 255.255.0.0
+network server05 eth0 172.16.83.5 255.255.0.0
+network server06 eth0 172.16.83.6 255.255.0.0
+network server07 eth0 172.16.83.7 255.255.0.0
 
-network outside01 eth0 172.16.83.8 255.255.252.0
+network outside01 eth0 172.16.83.8 255.255.0.0
 
 autoconfig oob-mgmt-server
 
