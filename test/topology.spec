@@ -4,12 +4,12 @@ vm oob-mgmt-server netq-1.3.0 2 10 40
 
 vm juniper01 cumulus-vx-3.7.2 1 2 2
 
-vm spine05 cumulus-vx-3.7.2 1 2 2
-vm spine06 cumulus-vx-3.7.2 1 2 2
+vm spine05 cumulus-vx-3.7.3 1 2 2
+vm spine06 cumulus-vx-3.7.3 1 2 2
 vm spine07 cumulus-vx-3.7.2 1 2 2
 vm spine08 cumulus-vx-3.7.2 1 2 2
 
-vm leaf50 cumulus-vx-3.7.2 1 2 2
+vm leaf50 cumulus-vx-3.7.3 1 2 2
 vm leaf51 cumulus-vx-3.7.2 1 2 2
 #vm leaf52 cumulus-vx-3.7.2 1 2 2
 #vm leaf53 cumulus-vx-3.7.2 1 2 2
@@ -17,7 +17,7 @@ vm leaf51 cumulus-vx-3.7.2 1 2 2
 #vm leaf55 cumulus-vx-3.7.2 1 2 2
 #vm leaf56 cumulus-vx-3.7.2 1 2 2
 
-vm leaf60 cumulus-vx-3.7.2 1 2 2
+vm leaf60 cumulus-vx-3.7.3 1 2 2
 vm leaf61 cumulus-vx-3.7.2 1 2 2
 #vm leaf62 cumulus-vx-3.7.2 1 2 2
 #vm leaf63 cumulus-vx-3.7.2 1 2 2
