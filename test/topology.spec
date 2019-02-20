@@ -2,15 +2,15 @@
 
 vm oob-mgmt-server netq-1.3.0 2 10 40
 
-vm juniper01 cumulus-vx-3.7.2 1 2 2
+#vm juniper01 cumulus-vx-3.7.2 1 2 2
 
 vm spine05 cumulus-vx-3.7.3 1 2 2
 vm spine06 cumulus-vx-3.7.3 1 2 2
-vm spine07 cumulus-vx-3.7.2 1 2 2
-vm spine08 cumulus-vx-3.7.2 1 2 2
+vm spine07 cumulus-vx-3.7.3 1 2 2
+vm spine08 cumulus-vx-3.7.3 1 2 2
 
 vm leaf50 cumulus-vx-3.7.3 1 2 2
-vm leaf51 cumulus-vx-3.7.2 1 2 2
+vm leaf51 cumulus-vx-3.7.3 1 2 2
 #vm leaf52 cumulus-vx-3.7.2 1 2 2
 #vm leaf53 cumulus-vx-3.7.2 1 2 2
 #vm leaf54 cumulus-vx-3.7.2 1 2 2
@@ -18,7 +18,7 @@ vm leaf51 cumulus-vx-3.7.2 1 2 2
 #vm leaf56 cumulus-vx-3.7.2 1 2 2
 
 vm leaf60 cumulus-vx-3.7.3 1 2 2
-vm leaf61 cumulus-vx-3.7.2 1 2 2
+vm leaf61 cumulus-vx-3.7.3 1 2 2
 #vm leaf62 cumulus-vx-3.7.2 1 2 2
 #vm leaf63 cumulus-vx-3.7.2 1 2 2
 #vm leaf64 cumulus-vx-3.7.2 1 2 2
@@ -26,15 +26,15 @@ vm leaf61 cumulus-vx-3.7.2 1 2 2
 #vm leaf66 cumulus-vx-3.7.2 1 2 2
 
 
-vm server01 ubuntu-16.04 2 4 4
-vm server02 ubuntu-16.04 2 4 4
+#vm server01 ubuntu-16.04 2 4 4
+#vm server02 ubuntu-16.04 2 4 4
 #vm server03 ubuntu-16.04 2 4 4
 #vm server04 ubuntu-16.04 2 4 4
 #vm server05 ubuntu-16.04 2 4 4
 #vm server06 ubuntu-16.04 2 4 4
 #vm server07 ubuntu-16.04 2 4 4
 
-vm outside01 ubuntu-16.04 2 4 4
+#vm outside01 ubuntu-16.04 2 4 4
 
 network oob-mgmt-server eth0 10.255.0.1 255.255.0.0 public
 service oob-mgmt-server ssh eth0 22 TCP public
@@ -50,7 +50,7 @@ service oob-mgmt-server mesosapp eth0 8088 TCP public
 
 network oob-mgmt-server eth1 172.16.83.254 255.255.252.0
 
-network juniper01 eth0 172.16.82.1 255.255.252.0
+#network juniper01 eth0 172.16.82.1 255.255.252.0
 
 network spine05 eth0 172.16.82.105 255.255.252.0
 network spine06 eth0 172.16.82.106 255.255.252.0
@@ -73,38 +73,38 @@ network leaf61 eth0 172.16.82.161 255.255.252.0
 #network leaf65 eth0 172.16.82.165 255.255.252.0
 #network leaf66 eth0 172.16.82.166 255.255.252.0
 
-network server01 eth0 172.16.83.1 255.255.252.0
-network server02 eth0 172.16.83.2 255.255.252.0
+#network server01 eth0 172.16.83.1 255.255.252.0
+#network server02 eth0 172.16.83.2 255.255.252.0
 #network server03 eth0 172.16.83.3 255.255.252.0
 #network server04 eth0 172.16.83.4 255.255.252.0
 #network server05 eth0 172.16.83.5 255.255.252.0
 #network server06 eth0 172.16.83.6 255.255.252.0
 #network server07 eth0 172.16.83.7 255.255.252.0
 
-network outside01 eth0 172.16.83.8 255.255.252.0
+#network outside01 eth0 172.16.83.8 255.255.252.0
 
 autoconfig oob-mgmt-server
 
 # Juniper to Spines
-connect juniper01 swp1 spine05 swp29
-connect juniper01 swp2 spine05 swp30
-connect juniper01 swp3 spine05 swp31
-connect juniper01 swp4 spine05 swp32
+#connect juniper01 swp1 spine05 swp29
+#connect juniper01 swp2 spine05 swp30
+#connect juniper01 swp3 spine05 swp31
+#connect juniper01 swp4 spine05 swp32
 
-connect juniper01 swp5 spine06 swp29
-connect juniper01 swp6 spine06 swp30
-connect juniper01 swp7 spine06 swp31
-connect juniper01 swp8 spine06 swp32
+#connect juniper01 swp5 spine06 swp29
+#connect juniper01 swp6 spine06 swp30
+#connect juniper01 swp7 spine06 swp31
+#connect juniper01 swp8 spine06 swp32
 
-connect juniper01 swp9 spine07 swp29
-connect juniper01 swp10 spine07 swp30
-connect juniper01 swp11 spine07 swp31
-connect juniper01 swp12 spine07 swp32
+#connect juniper01 swp9 spine07 swp29
+#connect juniper01 swp10 spine07 swp30
+#connect juniper01 swp11 spine07 swp31
+#connect juniper01 swp12 spine07 swp32
 
-connect juniper01 swp13 spine08 swp29
-connect juniper01 swp14 spine08 swp30
-connect juniper01 swp15 spine08 swp31
-connect juniper01 swp16 spine08 swp32
+#connect juniper01 swp13 spine08 swp29
+#connect juniper01 swp14 spine08 swp30
+#connect juniper01 swp15 spine08 swp31
+#connect juniper01 swp16 spine08 swp32
 
 
 # Leafs to Spines
@@ -261,11 +261,11 @@ connect leaf51 swp48 leaf61 swp48
 
 
 # Servers - 1 in each rack, connected to swp25 of its leafs.
-connect server01 eth1 leaf50 swp25
-connect server01 eth2 leaf60 swp25
+#connect server01 eth1 leaf50 swp25
+#connect server01 eth2 leaf60 swp25
 
-connect server02 eth1 leaf51 swp25
-connect server02 eth2 leaf61 swp25
+#connect server02 eth1 leaf51 swp25
+#connect server02 eth2 leaf61 swp25
 
 #connect server03 eth1 leaf52 swp25
 #connect server03 eth2 leaf62 swp25
@@ -283,5 +283,5 @@ connect server02 eth2 leaf61 swp25
 #connect server07 eth2 leaf66 swp25
 
 # Outside connect to Juniper
-connect outside01 eth1 juniper01 swp17
+#connect outside01 eth1 juniper01 swp17
 

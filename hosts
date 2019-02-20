@@ -3,8 +3,8 @@
 # switch management groups
 #
 
-[juniper]
-juniper01
+#[juniper]
+#juniper01
 
 [spines]
 spine05
@@ -31,22 +31,22 @@ leaf61
 [switches:children]
 spines
 leafs
-juniper
+#juniper
 
 #-------------------------------------------------------------------------------
 #
 # compute server groups
 #
 
-[servers]
-server01
-server02
+#[servers]
+#server01
+#server02
 #server03
 #server04
 #server05
 #server06
 #server07
-outside01
+#outside01
 
 #-------------------------------------------------------------------------------
 #
