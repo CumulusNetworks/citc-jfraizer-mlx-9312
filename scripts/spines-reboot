@@ -6,13 +6,14 @@ while  [ ! -f /tmp/stop ]
   date
   for i in spine0{5..8}
   do 
-    ssh $i "net add interface swp1-4,15-18 link down ; net commit"
+    echo "Flapping $i..."
+    ssh $i "net add interface swp1-4,15-18 link down ; net commit" >/dev/null 2>/dev/null
     sleep 5
-    ssh $i "net del interface swp1-4,15-18 link down ; net commit ; sudo reboot"
+    ssh $i "net del interface swp1-4,15-18 link down ; net commit ; sudo reboot" >/dev/null 2>/dev/null
   done
   X=$[$X+1]
-  echo "Sleeping for 10secs before starting loop #$X"
-  sleep 10
+  echo "Sleeping for 60secs before starting loop #$X"
+  sleep 60
 done
 
 #for i in spine0{5..8}
