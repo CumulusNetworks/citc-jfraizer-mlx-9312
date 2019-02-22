@@ -1,0 +1,21 @@
+#!/bin/bash
+X=1
+while  [ ! -f /tmp/stop ]
+  do
+  echo "This is loop #$X"
+  date
+  for i in spine0{5..8}
+  do 
+    ssh $i "net add interface swp1-4,15-18 link down ; net commit"
+    sleep 5
+    ssh $i "net del interface swp1-4,15-18 link down ; net commit ; sudo reboot"
+  done
+  X=$[$X+1]
+  echo "Sleeping for 10secs before starting loop #$X"
+  sleep 10
+done
+
+#for i in spine0{5..8}
+#do 
+#  ssh $i "net add interface swp1-4,15-18 link down ; net commit ; sudo reboot"
+#done
