@@ -12,11 +12,13 @@ while  [ ! -f /tmp/stop ]
  
   echo "Waiting 20secs...."
   sleep 20
-  echo "Checking for stuck RMACs..."
+  echo "Checking for stuck RMACs after $X iterations..."
   ./check-nexthops | grep ":"
   if [ "$?" -lt "1" ]; then
-    echo "WHOA! There is a stuck RMAC.  DAMN!!!"
+    echo "WHOA! There is a stuck RMAC after $X iterations.  DAMN!!!"
     ./check-nexthops
+    echo
+    echo
     exit
   else
     echo "No stuck RMACs found..."
