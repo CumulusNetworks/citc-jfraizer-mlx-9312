@@ -1,0 +1,12 @@
+#!/bin/bash
+for i in leaf{5..6}
+  do 
+  for z in {0..1}
+    do 
+    echo $i$z
+    ssh $i$z "net show evpn next-hops vni all"
+    echo
+  done
+done
+
+

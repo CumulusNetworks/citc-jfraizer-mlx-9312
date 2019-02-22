@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in spine0{5..8}
+do 
+  ssh $i "net add interface swp1-4,15-18 link down ; net commit"
+done
