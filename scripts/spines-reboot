@@ -5,18 +5,30 @@ while  [ ! -f /tmp/stop ]
   echo "This is loop #$X"
   date
   for i in spine0{5..8}
-  do 
-    echo "Flapping $i..."
+    do 
+    echo "Downing $i..."
     ssh $i "net add interface swp1-4,15-18 link down ; net commit" >/dev/null 2>/dev/null
-    sleep 5
+  done
+ 
+  echo "Waiting 20secs...."
+  sleep 20
+  echo "Checking for stuck RMACs..."
+  ./check-nexthops | grep ":"
+  if [ "$?" -lt "1" ]; then
+    echo "WHOA! There is a stuck RMAC.  DAMN!!!"
+    ./check-nexthops
+    exit
+  else
+    echo "No stuck RMACs found..."
+  fi
+
+  for i in spine0{5..8}
+    do
+    echo "Rebooting $i..."
     ssh $i "net del interface swp1-4,15-18 link down ; net commit ; sudo reboot" >/dev/null 2>/dev/null
   done
   X=$[$X+1]
-  echo "Sleeping for 60secs before starting loop #$X"
-  sleep 60
+  echo "Sleeping for 90secs before starting loop #$X"
+  sleep 90
 done
 
-#for i in spine0{5..8}
-#do 
-#  ssh $i "net add interface swp1-4,15-18 link down ; net commit ; sudo reboot"
-#done
